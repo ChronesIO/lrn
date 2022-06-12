@@ -2,6 +2,8 @@
 #define LRN_LIBRARY_H
 
 #include <chr>
+#include <chr-math>
+#include <chr-mem>
 
 void hello();
 
