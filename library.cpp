@@ -5,4 +5,6 @@
 void hello()
 {
     std::cout << "Hello, World!" << std::endl;
+
+    chr::i16 i;
 }
