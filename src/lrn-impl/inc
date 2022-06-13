@@ -1,4 +1,4 @@
 #pragma once
 
-#include "./elm/inc"
-#include "./lay/inc"
+#include "./element/inc"
+#include "./layout/inc"
