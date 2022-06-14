@@ -21,6 +21,12 @@ namespace lrn
         {
         }
 
+        constexpr Dimension(chr::f32 value)
+            : Value_(value)
+            , Type_(DimensionType::Unit)
+        {
+        }
+
     protected:
         chr::f32 Value_ = 0;
         DimensionType Type_ = DimensionType::Auto;
@@ -56,4 +62,20 @@ namespace lrn
     constexpr auto Unit(float v) -> Dimension { return Dimension(v, DimensionType::Unit); }
     constexpr auto Percent(float v) -> Dimension { return Dimension(v, DimensionType::Percent); }
     constexpr auto Pixel(float v) -> Dimension { return Dimension(v, DimensionType::Pixel); }
+
+    using Dimension1 = chr::Vector1<Dimension>;
+    using Dimension2 = chr::Vector2<Dimension>;
+    using Dimension3 = chr::Vector3<Dimension>;
+    using Dimension4 = chr::Vector4<Dimension>;
+}
+
+namespace lrn::Literals
+{
+    constexpr auto operator"" _u(long double v) -> decltype(Unit((float)v)) { return Unit((float)v); }
+    constexpr auto operator"" _pc(long double v) -> decltype(Unit((float)v)) { return Percent((float)v); }
+    constexpr auto operator"" _px(long double v) -> decltype(Unit((float)v)) { return Pixel((float)v); }
+
+    constexpr auto operator"" _u(chr::ul v) -> decltype(Unit((float)v)) { return Unit((float)v); }
+    constexpr auto operator"" _pc(chr::ul v) -> decltype(Unit((float)v)) { return Percent((float)v); }
+    constexpr auto operator"" _px(chr::ul v) -> decltype(Unit((float)v)) { return Pixel((float)v); }
 }

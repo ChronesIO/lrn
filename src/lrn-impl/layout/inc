@@ -1,3 +1,4 @@
 #pragma once
 
 #include "./layout-dimension.cc"
+#include "./layout-instance.cc"
