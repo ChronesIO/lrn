@@ -12,4 +12,6 @@ auto test() -> void
     const auto b = lrn::Unit(10);
 
     Dimension3 d = { 10_u, 20_u, Auto };
+
+    LayoutInstance_ i;
 }
