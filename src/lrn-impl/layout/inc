@@ -1,5 +1,4 @@
 #pragma once
 
-#include "./lay-alignment.cc"
-#include "./lay-dimension.cc"
-#include "./lay-instance.cc"
+#include "./core/inc"
+#include "./engine/inc"
