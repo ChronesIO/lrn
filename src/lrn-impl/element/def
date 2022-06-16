@@ -1,0 +1,15 @@
+#pragma once
+
+namespace lrn
+{
+    struct IElement;
+
+    struct Element;
+    struct ElementBase;
+    struct ElementContentBase;
+    struct ElementLayoutBase;
+
+    struct ElementScope;
+
+    struct ElementPath;
+}
