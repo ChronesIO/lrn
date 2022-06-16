@@ -1,1 +1,5 @@
 #pragma once
+
+#include "./element.cc"
+#include "./element-path.cc"
+#include "./element-scope.cc"

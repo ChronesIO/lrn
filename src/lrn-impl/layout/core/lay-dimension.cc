@@ -1,6 +1,6 @@
 #pragma once
 
-#include "chr"
+#include <chr>
 
 namespace lrn
 {
@@ -9,7 +9,7 @@ namespace lrn
         Auto,
         Unit,
         Percent,
-        Pixel
+        Point
     };
 
     struct Dimension
@@ -50,8 +50,8 @@ namespace lrn
         CHR_PROP(get = GetIsPercent) bool IsPercent;
         CHR_ND auto GetIsPercent() const -> bool { return Type == DimensionType::Percent; }
 
-        CHR_PROP(get = GetIsPixel) bool IsPixel;
-        CHR_ND auto GetIsPixel() const -> bool { return Type == DimensionType::Pixel; }
+        CHR_PROP(get = GetIsPoint) bool IsPoint;
+        CHR_ND auto GetIsPoint() const -> bool { return Type == DimensionType::Point; }
 
     public:
         bool operator==(const Dimension&) const = default;
@@ -61,7 +61,7 @@ namespace lrn
     constexpr Dimension Auto = Dimension(0, DimensionType::Auto);
     constexpr auto Unit(float v) -> Dimension { return Dimension(v, DimensionType::Unit); }
     constexpr auto Percent(float v) -> Dimension { return Dimension(v, DimensionType::Percent); }
-    constexpr auto Pixel(float v) -> Dimension { return Dimension(v, DimensionType::Pixel); }
+    constexpr auto Point(float v) -> Dimension { return Dimension(v, DimensionType::Point); }
 
     using Dimension1 = chr::Vector1<Dimension>;
     using Dimension2 = chr::Vector2<Dimension>;
@@ -72,10 +72,10 @@ namespace lrn
 namespace lrn::Literals
 {
     constexpr auto operator"" _u(long double v) -> decltype(Unit((float)v)) { return Unit((float)v); }
-    constexpr auto operator"" _pc(long double v) -> decltype(Unit((float)v)) { return Percent((float)v); }
-    constexpr auto operator"" _px(long double v) -> decltype(Unit((float)v)) { return Pixel((float)v); }
+    constexpr auto operator"" _pc(long double v) -> decltype(Percent((float)v)) { return Percent((float)v); }
+    constexpr auto operator"" _pt(long double v) -> decltype(Point((float)v)) { return Point((float)v); }
 
     constexpr auto operator"" _u(chr::ul v) -> decltype(Unit((float)v)) { return Unit((float)v); }
-    constexpr auto operator"" _pc(chr::ul v) -> decltype(Unit((float)v)) { return Percent((float)v); }
-    constexpr auto operator"" _px(chr::ul v) -> decltype(Unit((float)v)) { return Pixel((float)v); }
+    constexpr auto operator"" _pc(chr::ul v) -> decltype(Percent((float)v)) { return Percent((float)v); }
+    constexpr auto operator"" _pt(chr::ul v) -> decltype(Point((float)v)) { return Point((float)v); }
 }

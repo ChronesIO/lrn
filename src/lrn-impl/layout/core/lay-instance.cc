@@ -1,17 +1,9 @@
 #pragma once
 
-#include "chr"
-
-#include "./lay-alignment.cc"
-#include "./lay-dimension.cc"
+#include "./lay-instance-cache.cc"
 
 namespace lrn
 {
-    struct LayoutInstanceCache_
-    {
-
-    };
-
     struct LayoutInstance_
     {
     public:
