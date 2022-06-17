@@ -11,7 +11,7 @@ namespace lrn
         RemoveAll();
     }
 
-    auto ElementContentBase::Contains(const std::shared_ptr<Element>& e) -> bool
+    auto ElementContentBase::Contains(const chr::sp<Element>& e) -> bool
     {
         return std::find(Content_.begin(), Content_.end(), e) != Content_.end();
     }
@@ -21,7 +21,7 @@ namespace lrn
             != Content_.end();
     }
 
-    auto ElementContentBase::Add(const std::shared_ptr<Element>& e) -> void
+    auto ElementContentBase::Add(const chr::sp<Element>& e) -> void
     {
         if (!e) return;
 
@@ -33,7 +33,7 @@ namespace lrn
         e->AttachTo(dynamic_cast<Element*>(this));
         Added(e.get());
     }
-    auto ElementContentBase::Remove(const std::shared_ptr<Element>& e) -> void
+    auto ElementContentBase::Remove(const chr::sp<Element>& e) -> void
     {
         if (!e) return;
 

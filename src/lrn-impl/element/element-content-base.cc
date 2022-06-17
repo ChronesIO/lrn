@@ -16,7 +16,7 @@ namespace lrn
         ~ElementContentBase();
 
     private:
-        std::list<std::shared_ptr<Element>> Content_;
+        std::list<chr::sp<Element>> Content_;
 
     public:
         CHR_PROP(get = GetContent)
@@ -24,11 +24,11 @@ namespace lrn
         CHR_ND auto GetContent() const -> const decltype(Content_)& { return Content_; }
 
     public:
-        auto Contains(const std::shared_ptr<Element>& e) -> bool;
+        auto Contains(const chr::sp<Element>& e) -> bool;
         auto Contains(Element* e) -> bool;
 
-        auto Add(const std::shared_ptr<Element>& e) -> void;
-        auto Remove(const std::shared_ptr<Element>& e) -> void;
+        auto Add(const chr::sp<Element>& e) -> void;
+        auto Remove(const chr::sp<Element>& e) -> void;
         auto Remove(Element* e) -> void;
 
         auto RemoveAll() -> void;
@@ -39,6 +39,6 @@ namespace lrn
 
     public:
         template <class T> auto CanAdd() -> bool { return CanAdd(typeid(T)); }
-        virtual auto CanAdd(const std::type_info& t) -> bool { return true; }
+        virtual auto CanAdd(const chr::type& t) -> bool { return true; }
     };
 }

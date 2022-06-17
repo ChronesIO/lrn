@@ -49,16 +49,16 @@ namespace lrn
         auto RenderContent(void* q, size_t t) -> void;
 
     public:
-        auto Search(const Index::string& p) -> std::shared_ptr<Element>;
+        auto Search(chr::str_ref p) -> std::shared_ptr<Element>;
         auto Search(ElementPath p) -> std::shared_ptr<Element>;
 
-        auto TrySearch(const Index::string& p) -> std::shared_ptr<Element>;
+        auto TrySearch(chr::str_ref p) -> std::shared_ptr<Element>;
         auto TrySearch(ElementPath p) -> std::shared_ptr<Element>;
 
-        template <class T> auto Search(const Index::string& p) -> std::shared_ptr<T>;
+        template <class T> auto Search(chr::str_ref p) -> std::shared_ptr<T>;
         template <class T> auto Search(ElementPath p) -> std::shared_ptr<T>;
 
-        template <class T> auto TrySearch(const Index::string& p) -> std::shared_ptr<T>;
+        template <class T> auto TrySearch(chr::str_ref p) -> std::shared_ptr<T>;
         template <class T> auto TrySearch(ElementPath p) -> std::shared_ptr<T>;
 
     private:

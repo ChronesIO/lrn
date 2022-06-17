@@ -18,8 +18,8 @@ namespace lrn
 
     public:
         CHR_PROP(get = GetType)
-        const std::type_info& Type;
-        virtual auto GetType() const -> const std::type_info& { return typeid(Element); }
+        const chr::type& Type;
+        virtual auto GetType() const -> const chr::type& { return typeid(Element); }
 
     private:
         auto Added(Element* e) -> void override;

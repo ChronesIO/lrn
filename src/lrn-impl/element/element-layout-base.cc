@@ -27,7 +27,7 @@ namespace lrn
     public:
         CHR_PROP(get = GetAlignment, put = SetAlignment)
         Align Alignment;
-        auto GetAlignment() const -> Align { return CachedAlignment_; }
+        CHR_ND auto GetAlignment() const -> Align { return CachedAlignment_; }
         auto SetAlignment(auto value) { NodeAlign_(value); }
 
     private:
@@ -36,192 +36,192 @@ namespace lrn
     public:
         CHR_PROP(get = GetWidth, put = SetWidth)
         float Width;
-        auto GetWidth() const -> float;
+        CHR_ND auto GetWidth() const -> float;
         auto SetWidth(float value) -> void;
 
         CHR_PROP(get = GetHeight, put = SetHeight)
         float Height;
-        auto GetHeight() const -> float;
+        CHR_ND auto GetHeight() const -> float;
         auto SetHeight(float value) -> void;
 
         CHR_PROP(get = GetAutoWidth, put = SetAutoWidth)
         bool AutoWidth;
-        auto GetAutoWidth() const -> bool;
+        CHR_ND auto GetAutoWidth() const -> bool;
         auto SetAutoWidth(bool value) -> void;
 
         CHR_PROP(get = GetAutoHeight, put = SetAutoHeight)
         bool AutoHeight;
-        auto GetAutoHeight() const -> bool;
+        CHR_ND auto GetAutoHeight() const -> bool;
         auto SetAutoHeight(bool value) -> void;
 
         CHR_PROP(get = GetMinWidth, put = SetMinWidth)
         float MinWidth;
-        auto GetMinWidth() const -> float;
+        CHR_ND auto GetMinWidth() const -> float;
         auto SetMinWidth(float value) -> void;
 
         CHR_PROP(get = GetMinHeight, put = SetMinHeight)
         float MinHeight;
-        auto GetMinHeight() const -> float;
+        CHR_ND auto GetMinHeight() const -> float;
         auto SetMinHeight(float value) -> void;
 
         CHR_PROP(get = GetAutoMinWidth, put = SetAutoMinWidth)
         bool AutoMinWidth;
-        auto GetAutoMinWidth() const -> bool;
+        CHR_ND auto GetAutoMinWidth() const -> bool;
         auto SetAutoMinWidth(bool value) -> void;
 
         CHR_PROP(get = GetAutoMinHeight, put = SetAutoMinHeight)
         bool AutoMinHeight;
-        auto GetAutoMinHeight() const -> bool;
+        CHR_ND auto GetAutoMinHeight() const -> bool;
         auto SetAutoMinHeight(bool value) -> void;
 
         CHR_PROP(get = GetMaxWidth, put = SetMaxWidth)
         float MaxWidth;
-        auto GetMaxWidth() const -> float;
+        CHR_ND auto GetMaxWidth() const -> float;
         auto SetMaxWidth(float value) -> void;
 
         CHR_PROP(get = GetMaxHeight, put = SetMaxHeight)
         float MaxHeight;
-        auto GetMaxHeight() const -> float;
+        CHR_ND auto GetMaxHeight() const -> float;
         auto SetMaxHeight(float value) -> void;
 
         CHR_PROP(get = GetAutoMaxWidth, put = SetAutoMaxWidth)
         bool AutoMaxWidth;
-        auto GetAutoMaxWidth() const -> bool;
+        CHR_ND auto GetAutoMaxWidth() const -> bool;
         auto SetAutoMaxWidth(bool value) -> void;
 
         CHR_PROP(get = GetAutoMaxHeight, put = SetAutoMaxHeight)
         bool AutoMaxHeight;
-        auto GetAutoMaxHeight() const -> bool;
+        CHR_ND auto GetAutoMaxHeight() const -> bool;
         auto SetAutoMaxHeight(bool value) -> void;
 
         CHR_PROP(get = GetSize, put = SetSize)
         Index::Size Size;
-        auto GetSize() const -> Index::Size { return { Width, Height }; }
+        CHR_ND auto GetSize() const -> Index::Size { return { Width, Height }; }
         auto SetSize(Index::Size value) -> void;
 
         CHR_PROP(get = GetAutoSize, put = SetAutoSize)
         bool AutoSize;
-        auto GetAutoSize() const -> bool { return AutoWidth && AutoHeight; }
+        CHR_ND auto GetAutoSize() const -> bool { return AutoWidth && AutoHeight; }
         auto SetAutoSize(bool value) -> void;
 
         CHR_PROP(get = GetMinSize, put = SetMinSize)
         Index::Size MinSize;
-        auto GetMinSize() const -> Index::Size { return { MinWidth, MinHeight }; }
+        CHR_ND auto GetMinSize() const -> Index::Size { return { MinWidth, MinHeight }; }
         auto SetMinSize(Index::Size value) -> void;
 
         CHR_PROP(get = GetAutoMinSize, put = SetAutoMinSize)
         bool AutoMinSize;
-        auto GetAutoMinSize() const -> bool { return AutoMinWidth && AutoMinHeight; }
+        CHR_ND auto GetAutoMinSize() const -> bool { return AutoMinWidth && AutoMinHeight; }
         auto SetAutoMinSize(bool value) -> void;
 
         CHR_PROP(get = GetMaxSize, put = SetMaxSize)
         Index::Size MaxSize;
-        auto GetMaxSize() const -> Index::Size { return { MaxWidth, MaxHeight }; }
+        CHR_ND auto GetMaxSize() const -> Index::Size { return { MaxWidth, MaxHeight }; }
         auto SetMaxSize(Index::Size value) -> void;
 
         CHR_PROP(get = GetAutoMaxSize, put = SetAutoMaxSize)
         bool AutoMaxSize;
-        auto GetAutoMaxSize() const -> bool { return AutoMaxWidth && AutoMaxHeight; }
+        CHR_ND auto GetAutoMaxSize() const -> bool { return AutoMaxWidth && AutoMaxHeight; }
         auto SetAutoMaxSize(bool value) -> void;
 
         CHR_PROP(get = GetMarginLeft, put = SetMarginLeft)
         float MarginLeft;
-        auto GetMarginLeft() const -> float;
+        CHR_ND auto GetMarginLeft() const -> float;
         auto SetMarginLeft(float value) -> void;
 
         CHR_PROP(get = GetMarginTop, put = SetMarginTop)
         float MarginTop;
-        auto GetMarginTop() const -> float;
+        CHR_ND auto GetMarginTop() const -> float;
         auto SetMarginTop(float value) -> void;
 
         CHR_PROP(get = GetMarginRight, put = SetMarginRight)
         float MarginRight;
-        auto GetMarginRight() const -> float;
+        CHR_ND auto GetMarginRight() const -> float;
         auto SetMarginRight(float value) -> void;
 
         CHR_PROP(get = GetMarginBottom, put = SetMarginBottom)
         float MarginBottom;
-        auto GetMarginBottom() const -> float;
+        CHR_ND auto GetMarginBottom() const -> float;
         auto SetMarginBottom(float value) -> void;
 
         CHR_PROP(get = GetAutoMarginLeft, put = SetAutoMarginLeft)
         bool AutoMarginLeft;
-        auto GetAutoMarginLeft() const -> bool;
+        CHR_ND auto GetAutoMarginLeft() const -> bool;
         auto SetAutoMarginLeft(bool value) -> void;
 
         CHR_PROP(get = GetAutoMarginTop, put = SetAutoMarginTop)
         bool AutoMarginTop;
-        auto GetAutoMarginTop() const -> bool;
+        CHR_ND auto GetAutoMarginTop() const -> bool;
         auto SetAutoMarginTop(bool value) -> void;
 
         CHR_PROP(get = GetAutoMarginRight, put = SetAutoMarginRight)
         bool AutoMarginRight;
-        auto GetAutoMarginRight() const -> bool;
+        CHR_ND auto GetAutoMarginRight() const -> bool;
         auto SetAutoMarginRight(bool value) -> void;
 
         CHR_PROP(get = GetAutoMarginBottom, put = SetAutoMarginBottom)
         bool AutoMarginBottom;
-        auto GetAutoMarginBottom() const -> bool;
+        CHR_ND auto GetAutoMarginBottom() const -> bool;
         auto SetAutoMarginBottom(bool value) -> void;
 
         CHR_PROP(get = GetMargin, put = SetMargin)
         Index::Vec4F Margin;
-        auto GetMargin() const -> Index::Vec4F;
+        CHR_ND auto GetMargin() const -> Index::Vec4F;
         auto SetMargin(Index::Vec4F value) -> void;
 
         CHR_PROP(get = GetAutoMargin, put = SetAutoMargin)
         bool AutoMargin;
-        auto GetAutoMargin() const -> bool;
+        CHR_ND auto GetAutoMargin() const -> bool;
         auto SetAutoMargin(bool value) -> void;
 
         CHR_PROP(get = GetPaddingLeft, put = SetPaddingLeft)
         float PaddingLeft;
-        auto GetPaddingLeft() const -> float;
+        CHR_ND auto GetPaddingLeft() const -> float;
         auto SetPaddingLeft(float value) -> void;
 
         CHR_PROP(get = GetPaddingTop, put = SetPaddingTop)
         float PaddingTop;
-        auto GetPaddingTop() const -> float;
+        CHR_ND auto GetPaddingTop() const -> float;
         auto SetPaddingTop(float value) -> void;
 
         CHR_PROP(get = GetPaddingRight, put = SetPaddingRight)
         float PaddingRight;
-        auto GetPaddingRight() const -> float;
+        CHR_ND auto GetPaddingRight() const -> float;
         auto SetPaddingRight(float value) -> void;
 
         CHR_PROP(get = GetPaddingBottom, put = SetPaddingBottom)
         float PaddingBottom;
-        auto GetPaddingBottom() const -> float;
+        CHR_ND auto GetPaddingBottom() const -> float;
         auto SetPaddingBottom(float value) -> void;
 
         CHR_PROP(get = GetAutoPaddingLeft, put = SetAutoPaddingLeft)
         bool AutoPaddingLeft;
-        auto GetAutoPaddingLeft() const -> bool;
+        CHR_ND auto GetAutoPaddingLeft() const -> bool;
         auto SetAutoPaddingLeft(bool value) -> void;
 
         CHR_PROP(get = GetAutoPaddingTop, put = SetAutoPaddingTop)
         bool AutoPaddingTop;
-        auto GetAutoPaddingTop() const -> bool;
+        CHR_ND auto GetAutoPaddingTop() const -> bool;
         auto SetAutoPaddingTop(bool value) -> void;
 
         CHR_PROP(get = GetAutoPaddingRight, put = SetAutoPaddingRight)
         bool AutoPaddingRight;
-        auto GetAutoPaddingRight() const -> bool;
+        CHR_ND auto GetAutoPaddingRight() const -> bool;
         auto SetAutoPaddingRight(bool value) -> void;
 
         CHR_PROP(get = GetAutoPaddingBottom, put = SetAutoPaddingBottom)
         bool AutoPaddingBottom;
-        auto GetAutoPaddingBottom() const -> bool;
+        CHR_ND auto GetAutoPaddingBottom() const -> bool;
         auto SetAutoPaddingBottom(bool value) -> void;
 
         CHR_PROP(get = GetPadding, put = SetPadding)
         Index::Vec4F Padding;
-        auto GetPadding() const -> Index::Vec4F;
+        CHR_ND auto GetPadding() const -> Index::Vec4F;
         auto SetPadding(Index::Vec4F value) -> void;
 
         CHR_PROP(get = GetAutoPadding, put = SetAutoPadding)
         bool AutoPadding;
-        auto GetAutoPadding() const -> bool;
+        CHR_ND auto GetAutoPadding() const -> bool;
         auto SetAutoPadding(bool value) -> void;
 
     private:

@@ -57,11 +57,11 @@ namespace lrn
         return search(this);
     }
 
-    auto ElementScope::SearchFromElementScope_(ElementPath p) -> std::shared_ptr<Element>
+    auto ElementScope::SearchFromElementScope_(ElementPath p) -> chr::sp<Element>
     {
         auto result = Search_(&p);
         if (result == nullptr) return { nullptr };
-        return result->ISelf();
+        return result->sp_self;
     }
 
     auto ElementScope::Search_Element_(ElementPath* p) -> Element*
@@ -70,7 +70,7 @@ namespace lrn
         else if (p->TargetsId) return Search_Element_ById_(p->Target);
         return nullptr;
     }
-    auto ElementScope::Search_Element_ByName_(const Index::string& name) -> Element*
+    auto ElementScope::Search_Element_ByName_(chr::str_ref name) -> Element*
     {
         std::function<Element*(Element*)> search = [&search, &name](Element* p) -> Element*
         {
@@ -94,7 +94,7 @@ namespace lrn
         }
         return nullptr;
     }
-    auto ElementScope::Search_Element_ById_(const Index::string& id) -> Element*
+    auto ElementScope::Search_Element_ById_(chr::str_ref id) -> Element*
     {
         std::function<Element*(Element*)> search = [&search, &id](Element* p) -> Element*
         {
@@ -125,7 +125,7 @@ namespace lrn
         else if (p->TargetsId) return Search_ElementScope_ById_(p->Target);
         return nullptr;
     }
-    auto ElementScope::Search_ElementScope_ByName_(const Index::string& name) -> ElementScope*
+    auto ElementScope::Search_ElementScope_ByName_(chr::str_ref name) -> ElementScope*
     {
         std::function<ElementScope*(Element*)> search = [&search, &name](Element* p) -> ElementScope*
         {
@@ -151,9 +151,9 @@ namespace lrn
         }
         return nullptr;
     }
-    auto ElementScope::Search_ElementScope_ById_(const Index::string& id) -> ElementScope*
+    auto ElementScope::Search_ElementScope_ById_(chr::str_ref id) -> ElementScope*
     {
-        std::function<ElementScope*(Element*)> search = [&search, &id](Element* p) -> ElementScope*
+        chr::func<ElementScope*, Element*> search = [&search, &id](Element* p) -> ElementScope*
         {
             auto cs = dynamic_cast<ElementScope*>(p);
             if (cs)
@@ -180,7 +180,7 @@ namespace lrn
 
     auto ElementScope::Search_ParentElementScope_() -> ElementScope*
     {
-        std::function<ElementScope*(Element*)> search = [&search](Element* p) -> ElementScope*
+        chr::func<ElementScope*, Element*> search = [&search](Element* p) -> ElementScope*
         {
             auto ptr = p->Owner;
             if (!ptr) return nullptr;

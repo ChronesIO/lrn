@@ -2,15 +2,15 @@
 
 namespace lrn
 {
-    auto ElementPath::From(const Index::List<Index::string>& p) -> ElementPath { return { p }; }
-    auto ElementPath::From(Index::string s) -> ElementPath { return { s.Split("/") }; }
+    auto ElementPath::From(const chr::list<chr::str>& p) -> ElementPath { return { p }; }
+    auto ElementPath::From(chr::str s) -> ElementPath { return { s.Split("/") }; }
 
-    auto ElementPath::TargetOr(const Index::string& other) -> Index::string
+    auto ElementPath::TargetOr(chr::str_ref other) -> chr::str
     {
         if (IsEmpty) return other;
         else return Target;
     }
-    auto ElementPath::ElementOr(const Index::string& other) -> Index::string
+    auto ElementPath::ElementOr(chr::str_ref other) -> chr::str
     {
         if (IsEmpty) return other;
         else return Element;
@@ -18,7 +18,7 @@ namespace lrn
 
     void ElementPath::Next()
     {
-        if (Path.Length <= 1) throw std::bad_function_call();
+        if (Path.size() <= 1) throw std::bad_function_call();
         Path.erase(Path.begin());
     }
 }

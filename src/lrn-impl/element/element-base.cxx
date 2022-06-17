@@ -32,7 +32,7 @@ namespace lrn
         }
     }
 
-    auto ElementBase::Search(const Index::string& p) -> std::shared_ptr<Element>
+    auto ElementBase::Search(chr::str_ref p) -> std::shared_ptr<Element>
     {
         return Search(ElementPath::From(p));
     }
@@ -43,7 +43,7 @@ namespace lrn
         throw std::exception();
     }
 
-    auto ElementBase::TrySearch(const Index::string& p) -> std::shared_ptr<Element>
+    auto ElementBase::TrySearch(chr::str_ref p) -> std::shared_ptr<Element>
     {
         return TrySearch(ElementPath::From(p));
     }
@@ -54,7 +54,7 @@ namespace lrn
         return result->SearchFromElementScope_(p);
     }
 
-    template <class T> auto ElementBase::Search(const Index::string& p) -> std::shared_ptr<T>
+    template <class T> auto ElementBase::Search(chr::str_ref p) -> std::shared_ptr<T>
     {
         return Search<T>(ElementPath::From(p));
     }
@@ -65,7 +65,7 @@ namespace lrn
         throw std::exception();
     }
 
-    template <class T> auto ElementBase::TrySearch(const Index::string& p) -> std::shared_ptr<T>
+    template <class T> auto ElementBase::TrySearch(chr::str_ref p) -> std::shared_ptr<T>
     {
         return TrySearch<T>(ElementPath::From(p));
     }
