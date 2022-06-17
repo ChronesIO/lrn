@@ -9,14 +9,14 @@ namespace lrn
     struct ElementPath
     {
     public:
-        ElementPath(chr::list<chr::str> path)
+        explicit ElementPath(chr::list<chr::str> path)
             : Path(std::move(path))
         {
         }
 
     public:
         static auto From(const chr::list<chr::str>& p) -> ElementPath;
-        static auto From(chr::str s) -> ElementPath;
+        static auto From(chr::str_ref s) -> ElementPath;
 
     public:
         chr::list<chr::str> Path;
