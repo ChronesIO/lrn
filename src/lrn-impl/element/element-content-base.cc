@@ -24,11 +24,11 @@ namespace lrn
         CHR_ND auto GetContent() const -> const decltype(Content_)& { return Content_; }
 
     public:
-        auto Contains(const chr::sp<Element>& e) -> bool;
+        auto Contains(chr::sp_ref<Element> e) -> bool;
         auto Contains(Element* e) -> bool;
 
-        auto Add(const chr::sp<Element>& e) -> void;
-        auto Remove(const chr::sp<Element>& e) -> void;
+        auto Add(chr::sp_ref<Element> e) -> void;
+        auto Remove(chr::sp_ref<Element> e) -> void;
         auto Remove(Element* e) -> void;
 
         auto RemoveAll() -> void;
