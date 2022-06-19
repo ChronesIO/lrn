@@ -20,5 +20,9 @@ namespace lrn
         CHR_PROP(get = GetCenter)
         chr::Vector2F Center;
         CHR_ND auto GetCenter() const -> chr::Vector2F { return Position + (Size / 2); }
+
+        CHR_PROP(get = GetAspectRatio)
+        float AspectRatio;
+        CHR_ND auto GetAspectRatio() const -> float { return Size.Y == 0 ? 0 : Size.X / Size.Y; }
     };
 }
