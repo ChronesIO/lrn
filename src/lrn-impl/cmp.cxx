@@ -12,5 +12,5 @@ auto test() -> void
     i.Size = { Auto, 10_u };
     i.Margin = { 3_pc, Auto };
     i.AspectRatio = 16.0 / 8;
-    i.Alignment = Alignment::Center;
+    i.Alignment = Alignment::LeftCenter;
 }
