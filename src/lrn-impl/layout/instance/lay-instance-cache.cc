@@ -1,7 +1,6 @@
 #pragma once
 
-#include "./lay-alignment.cc"
-#include "./lay-dimension.cc"
+#include <lrn-impl/layout/core/inc>
 
 namespace lrn
 {
