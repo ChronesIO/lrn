@@ -1,0 +1,6 @@
+#pragma once
+
+namespace lrn
+{
+    struct Element;
+}

@@ -2,3 +2,5 @@
 
 #include "./core/inc"
 #include "./engine/inc"
+#include "./instance/inc"
+#include "./tree/inc"
