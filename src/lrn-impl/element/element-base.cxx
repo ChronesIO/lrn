@@ -23,8 +23,8 @@ namespace lrn
         Detached(e);
     }
 
-    auto ElementBase::Render(void* q, size_t t) -> void { RenderContent(q, t); }
-    auto ElementBase::RenderContent(void* q, size_t t) -> void
+    auto ElementBase::Render(void* q, chr::hash t) -> void { RenderContent(q, t); }
+    auto ElementBase::RenderContent(void* q, chr::hash t) -> void
     {
         for (auto& c : Content_)
         {
@@ -90,10 +90,5 @@ namespace lrn
             return search(ptr);
         };
         return search(static_cast<Element*>(this));
-    }
-
-    template <class T> auto ElementBase::RenderQ(void* q, size_t t) -> T*
-    {
-        if (t == typeid(T).hash_code()) { return static_cast<T*>(q); }
     }
 }

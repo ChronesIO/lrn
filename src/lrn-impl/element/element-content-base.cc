@@ -39,6 +39,6 @@ namespace lrn
 
     public:
         template <class T> auto CanAdd() -> bool { return CanAdd(typeid(T)); }
-        virtual auto CanAdd(const chr::type& t) -> bool { return true; }
+        virtual auto CanAdd(chr::type_ref t) -> bool { return true; }
     };
 }

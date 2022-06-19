@@ -43,10 +43,10 @@ namespace lrn
         virtual auto Detached(Element* e) -> void { }
 
     public:
-        virtual auto Render(void* q, size_t t) -> void;
+        virtual auto Render(void* q, chr::hash t) -> void;
 
     protected:
-        auto RenderContent(void* q, size_t t) -> void;
+        auto RenderContent(void* q, chr::hash t) -> void;
 
     public:
         auto Search(chr::str_ref p) -> std::shared_ptr<Element>;
@@ -65,6 +65,9 @@ namespace lrn
         auto SearchElementScope_() -> ElementScope*;
 
     protected:
-        template <class T> static auto RenderQ(void* q, size_t t) -> T*;
+        template <class T> static auto RenderQ(void* q, chr::hash t) -> T*
+        {
+            if (t == typeid(T).hash_code()) { return static_cast<T*>(q); }
+        }
     };
 }

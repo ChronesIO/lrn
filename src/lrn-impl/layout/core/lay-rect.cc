@@ -12,37 +12,37 @@ namespace lrn
         {
         }
 
-        LayoutRect(chr::Vector2F position, chr::Vector2F size)
+        LayoutRect(chr::vec2f position, chr::vec2f size)
             : Position(position.X, position.Y)
             , Size(size.X, size.Y)
         {
         }
 
-        LayoutRect(chr::Vector4F v)
+        LayoutRect(chr::vec4f v)
             : Position(v.X, v.Y)
             , Size(v.Z, v.W)
         {
         }
 
-        chr::Vector2F Position;
-        chr::Vector2F Size;
+        chr::vec2f Position;
+        chr::vec2f Size;
 
         CHR_PROP(get = GetFirst)
-        chr::Vector2F First;
-        CHR_ND auto GetFirst() const -> chr::Vector2F { return Position; }
+        chr::vec2f First;
+        CHR_ND auto GetFirst() const -> chr::vec2f { return Position; }
 
         CHR_PROP(get = GetSecond)
-        chr::Vector2F Second;
-        CHR_ND auto GetSecond() const -> chr::Vector2F { return Position + Size; }
+        chr::vec2f Second;
+        CHR_ND auto GetSecond() const -> chr::vec2f { return Position + Size; }
 
         CHR_PROP(get = GetCenter)
-        chr::Vector2F Center;
-        CHR_ND auto GetCenter() const -> chr::Vector2F { return Position + (Size / 2); }
+        chr::vec2f Center;
+        CHR_ND auto GetCenter() const -> chr::vec2f { return Position + (Size / 2); }
 
         CHR_PROP(get = GetAspectRatio)
         float AspectRatio;
         CHR_ND auto GetAspectRatio() const -> float { return Size.Y == 0 ? 0 : Size.X / Size.Y; }
 
-        operator chr::Vector4F() const { return { Position, Size }; }
+        operator chr::vec4f() const { return { Position, Size }; }
     };
 }
